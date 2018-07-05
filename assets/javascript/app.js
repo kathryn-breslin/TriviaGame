@@ -5,39 +5,40 @@
 //Page 'clears' are reveals Number of Correct Answers, Incorrect Answers, and those left unanswered
 
 //create radion buttons
-function quizQuestion(question, answerChoices, correctAnswer) {
-    this.question = question;
-    this.answerChoices = answerChoices;
-    this.correctAnswer = correctAnswer;
-}
+
+// function quizQuestion(question, answerChoices, correctAnswer) {
+//     this.question = question;
+//     this.answerChoices = answerChoices;
+//     this.correctAnswer = correctAnswer;
+// }
 
 var questions = [{
     question: "What year did the Tour de France begin?",
-    answerChoices: ["1925", "2008", "1848", "1957"], 
+    answerChoices: ["1925", "1903", "1848", "2001"], 
     correctAnwer: 2
 },
 
 {
     question: "Who was the first winner of the Tour?",
-    answerChoices: ["Name1", "Name2", "Name3", "Name4"],
+    answerChoices: ["Henri Cornet", "Lance Armstrong", "Michael Phelps", "Maurice Garin"],
     correctAnswer: 4
 },
 
 {
-    question: "What mountain range does the race pass through?",
-    answerChoices: ["One", "Two", "Three", "Four"],
+    question: "What mountain ranges does the race pass through?",
+    answerChoices: ["Alps", "Himalayas", "Pyrenees", "Rockies"],
     correctAnswer: 1
 },
 
 {
     question: "How many miles a day do the cyclists have to ride?",
-    answerChoices: ["500", "400", "300", "200"],
+    answerChoices: ["500", "400", "100", "200"],
     correctAnswer: 3
 },
 
 {
     question: "What is the total distance the racers will have traveled by the end of the Tour?",
-    answerChoice: ["1000", "900", "800", "700"],
+    answerChoices: ["2,200", "9,050", "800", "1,370"],
     correctAnswer: 1
 }
 ];
@@ -50,13 +51,14 @@ function questionOptions() {
     $('#question').html(parseInt(currentQuestion) + 1 + ". " + questions[currentQuestion].question);
     //var options = questions[currentQuestion].answerChoices;
     var formHtml = '';
-
+        
     for (var i = 0; i < questions.length; i++) {
         formHtml += '<div><input type="radio" name="option" value="' + i + '" id="option' + i + '"><label for="option' + i + '">' + questions[currentQuestion].answerChoices[i] + '</label></div><br/>';
     }
 
     $('#form').html(formHtml);
     $('#option').prop('checked', true);
+
 };
 
 function checkAnswers() {
@@ -72,6 +74,7 @@ $(document).ready(function() {
 var start = $('#start');
 var next = $('#next');
 var results = $('#results');
+var stop;
 
 start.click(function() {
     var time = 45;
@@ -84,35 +87,34 @@ start.click(function() {
     }
     if (time === 0) {
         stop();
-        alert("Time's Up!"); 
-        $('#results').html("Correct Answers: " + correctAnswers);
-        $('#results').html("Incorrect Answers: " + incorrectAnswers);
         clearInterval(time);
         }
     }, 1000);
     });
 
-    next.click(function() {
+next.click(function() {
     event.preventDefault();
-    (this).question;
     checkAnswers();
     currentQuestion++;
-    });
-
     questionOptions();
-
-    if (currentQuestion < questions.length) {
-        questionOptions();
-        if (currentQuestion === questions.length -1) {
-            $('#next').html('Submit');
-            $('#next').click(function() {
-                $('#results').html("Correct Answers: " + correctAnswers);
-                $('#results').html("Incorrect Answers: " + incorrectAnswers);
-                });
-            };
-        };
-
+    
 });
+
+if (currentQuestion < questions.length) {
+    questionOptions();
+    if (currentQuestion === questions.length -1) {
+        $('#next').html("Submit");
+        $('#next').click(function() {
+            $('#results').html("Correct Answers: " + correctAnswers + "Incorrect Answers: " + incorrectAnswers);
+        
+           // $('#results').html("Incorrect Answers: " + incorrectAnswers);
+            });
+        };
+    };
+ 
+});
+
+
 
 
 
