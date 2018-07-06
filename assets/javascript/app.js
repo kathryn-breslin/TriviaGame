@@ -47,7 +47,13 @@ var currentQuestion = 0;
 var correctAnswers = 0;
 var incorrectAnswers = 0;
 
+
 function questionOptions() {
+
+    $('#container').hide();
+    $('#next').hide();
+    $('#timeRemaining').hide();
+
     $('#question').html(parseInt(currentQuestion) + 1 + ". " + questions[currentQuestion].question);
     //var options = questions[currentQuestion].answerChoices;
     var formHtml = '';
@@ -58,6 +64,7 @@ function questionOptions() {
 
     $('#form').html(formHtml);
     $('#option').prop('checked', true);
+    
 
 };
 
@@ -77,7 +84,11 @@ var results = $('#results');
 var stop;
 
 start.click(function() {
-    var time = 45;
+    $("#start").hide();
+    $('#timeRemaining').show();
+    $('#container').show();
+    $('#next').show();
+    var time = 30;
     setInterval(function() {
     time--; 
     
@@ -97,6 +108,9 @@ next.click(function() {
     checkAnswers();
     currentQuestion++;
     questionOptions();
+    $('#container').show();
+    $('#next').show();
+    $('#timeRemaining').show();
     
 });
 
@@ -105,6 +119,7 @@ if (currentQuestion < questions.length) {
     if (currentQuestion === questions.length -1) {
         $('#next').html("Submit");
         $('#next').click(function() {
+            $('#results').show();
             $('#results').html("Correct Answers: " + correctAnswers + "Incorrect Answers: " + incorrectAnswers);
         
            // $('#results').html("Incorrect Answers: " + incorrectAnswers);

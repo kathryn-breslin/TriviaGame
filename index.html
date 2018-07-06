@@ -6,43 +6,50 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Trivia Game</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
 
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h1>Tour de France Trivia</h1>
+        <div class="row" id="TDFrow">
+            <div class="col-4">
+                    <img src="assets/images/grand_tour_tdf.svg">
+             </div>
+            <div class="col-8">
+                    <h1 id="TDF">Trivia</h1>
             </div>
         </div>
 
-        <div class="row">
+        <div class="row" id="startPage">
             <div class="col-12">
                 <button id="start">Start</button>
             </div>
         </div>
         <div class="row">
-            <div class="col-12" id="timeRemaining">
-                
+            <div class="col-2" id="timeRemaining">
             </div>
+
+            <div class="col-1"></div>
+
+            <div class=col-7 id="container">
+                    <h5 id="question"></h5>
+                    <br/><br/>
+                    <form id="form">
+                    </form>
+
+                    <button id="next" class="button">Next Question</button>
+
+                </div>
         </div>
 
-        <div class="row">
-            <div class=col-12>
-                <h5 id="question"></h5>
-                <br/><br/>
-                <form id="form">
-
-                </form>
-            </div>
-        </div>
-
-        <div class="row>">
-            <div class="col-12">
+       <!-- <div class="row>">
+            <div class="col-4">
                 <button id="next" class="button">Next Question</button>
             </div>
-        </div>
+            <div class="col-8"></div>
+        </div> -->
 
         <div id="results"></div>
     </div>
