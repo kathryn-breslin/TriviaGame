@@ -5,7 +5,7 @@
 .jumbotron .display-4 {
     font-family: 'Staatliches', cursive;
     font-size: 110px;
-    color: white;
+    color: #F1B203;
     text-align: center;
     margin: auto;
     text-shadow: black 5px 0 15px;
@@ -72,7 +72,8 @@ body {
     font-size: 40px;
     width: 100%;
     font-family: Lato;
-    color: white;
+    color: black;
+    font-weight: bold;
 }
 
 svg {
@@ -83,4 +84,22 @@ svg {
   stroke-dasharray: 440; /* this value is the pixel circumference of the circle */
   stroke-dashoffset: 440;
   transition: all 1s linear;
+}
+
+#results {
+    text-align:center;
+    line-height: 125px;
+    font-size: 40px;
+    width: 100%;
+    font-family: Lato;
+    color: white;
+}
+
+#results{
+    text-align: center;
+}
+
+#results #startOver:hover {
+    background-color: #082EB7;
+    color: white;
 }
