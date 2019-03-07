@@ -1,114 +1,43 @@
-body {
-    background-color: #FFC529;
-
-}
-
-#TDFrow {
-    background-color: #FFC529;
-}
-
-#TDFrow img {
-    margin-left: 200px;
-}
-#TDF {
-    margin: 40px;
-    font-family: 'Nanum Brush Script', cursive;
-    color: white;
-    font-size: 110px;
-
-}
-
-#start {
-    margin: 10px;
-    text-align: center;
-    display: inline-block;
-    border-radius: 10%;
-    width: 200px;
-    height: 100px;
-    background-color: white;
-    position: absolute;
-    transition: .5s ease;
-    box-shadow: 5px 10px #888888;
-    top: 50%;
-    left: 40%;
-    font-family: 'Anton', sans-serif;
-    font-size: 30px;
-}
-
-#start:hover {
-    -webkit-transform: scale(1.05);/*Grows in size like Angry Birds button*/
-    -moz-transform: scale(1.05);
-    -ms-transform: scale(1.05);
-    -o-transform: scale(1.05);
-}
-
-#timeRemaining {
-    font-family: 'Anton', sans-serif;
-    font-size: 15px;
-    text-align: center;
-    margin-bottom: 20px;
-    padding: 30px;
-    background-color: white;
-    width: 100px;
-	height: 100px;
-	-moz-border-radius: 50px;
-	-webkit-border-radius: 50px;
-	border-radius: 50px;
-}
-
-#container {
-    border: solid black 1px;
-    background-color: #FEDC5F;
-}
-
-#question {
-    margin: 20px;
-}
-
-#form {
-    display: inline-block;
-    margin-left: 20px;
-}
-
-#next {
-    margin: 10px;
-    text-align: center;
-    display: inline-block;
-    border-radius: 10%;
-    width: 100px;
-    height: 50px;
-    background-color: white;
-    position: absolute;
-    transition: .5s ease;
-    box-shadow: 2px 5px #888888;
-    top: 70%;
-    left: 70%;
-    font-family: 'Anton', sans-serif;
-    font-size: 12px;
-}
-
-#submit {
-    margin: 10px;
-    text-align: center;
-    display: inline-block;
-    border-radius: 10%;
-    width: 100px;
-    height: 50px;
-    background-color: white;
-    position: absolute;
-    transition: .5s ease;
-    box-shadow: 2px 5px #888888;
-    top: 70%;
-    left: 70%;
-    font-family: 'Anton', sans-serif;
-    font-size: 12px;
-}
-
-#results {
-    background-color: #FEDC5F;
+.jumbotron {
+    background-image: url('../images/tourDeFrance.jpg');
+    background-size: cover;
     height: 100%;
-    width: 100%;
     color: white;
+}
+
+.jumbotron .display-4 {
+    font-family: 'Staatliches', cursive;
+    font-size: 110px;
+    text-align: center;
+    margin: auto;
+    text-shadow: black 5px 0 15px;
+}
+
+.jumbotron .lead {
     font-size: 20px;
-    border: solid black 1px;
+    text-shadow: black 5px 0 15px;
+    text-align: center;
+}
+
+.startButton {
+    text-align: center;
+}
+
+body {
+    background-color:  #f7f7f7; 
+}
+
+#background {
+    background-color:  #f7f7f7;
+    padding: 20px;
+    margin: auto;
+}
+
+#form button  {
+    margin: 5px;
+    background-color: white;
+}
+
+#form button:hover {
+    background-color: #6D757D;
 }
