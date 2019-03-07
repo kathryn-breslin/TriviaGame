@@ -35,27 +35,29 @@ var currentQuestion = 0;
 var correct;
 var question;
 var sum = correctAnswers + incorrectAnswers;
-var container = $('#container');
 
 $(document).ready(function () {
-    container.hide();
     var start = $('#start');
     var time = 30;
+    var initialOffset = '440';
+    var i = 1;
 
     //Starting the game and the clock
     start.click(function () {
+        $('.circle_animation').css('stroke-dashoffset', initialOffset-(1*(initialOffset/time)));
         displayQuestion();
-        setInterval(function () {
-            time--;
-            container.show();
-            start.hide();
-            if (time >= 0) {
-                $('#timeRemaining').html("<h4>" + time + " Seconds <h4>");
+        start.hide();
+        
+        var interval = setInterval(function() {
+                $('#timeRemaining').text(i);
+                if (i === time) {  	
+                    clearInterval(interval);
+                    showResults();
+                    clock.hide();
             }
-            if (time === 0) {
-                stop();
-                clearInterval(time);
-                showResults();
+            else {
+                $('.circle_animation').css('stroke-dashoffset', initialOffset-((i+1)*(initialOffset/time)));
+                i++;  
             }
         }, 1000);
     });
@@ -94,10 +96,11 @@ $(document).ready(function () {
     // displayQuestion();
     //Function to show Results
     function showResults() {
-        if (currentQuestion === 5) {
+        if (currentQuestion === 5 || i === 30 ) {
             $('#correct').html("Correct:" + correctAnswers);
             $('#incorrect').html("Incorrect:" + incorrectAnswers);
-            $('#container').empty();
+            $('#question').empty();
+            $('#clock').empty();
         }
         else {
             displayQuestion();
@@ -112,5 +115,5 @@ $(document).ready(function () {
 
 
 
-    
+
 
