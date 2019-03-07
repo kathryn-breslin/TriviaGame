@@ -35,15 +35,18 @@ var currentQuestion = 0;
 var correct;
 var question;
 var sum = correctAnswers + incorrectAnswers;
+var background = $('#background');
 
 $(document).ready(function () {
+    background.hide();
     var start = $('#start');
     var time = 30;
     var initialOffset = '440';
     var i = 1;
 
-    //Starting the game and the clock
+    //Starting the game and the clock on click
     start.click(function () {
+        background.show();
         $('.circle_animation').css('stroke-dashoffset', initialOffset-(1*(initialOffset/time)));
         displayQuestion();
         start.hide();
@@ -94,12 +97,14 @@ $(document).ready(function () {
         })
     }
     // displayQuestion();
+    
     //Function to show Results
     function showResults() {
         if (currentQuestion === 5 || i === 30 ) {
             $('#correct').html("Correct:" + correctAnswers);
             $('#incorrect').html("Incorrect:" + incorrectAnswers);
             $('#question').empty();
+            $('#form').empty();
             $('#clock').empty();
         }
         else {

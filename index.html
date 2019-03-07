@@ -19,28 +19,23 @@
             <h1 class="display-4">Tour de France Trivia</h1>
             <p class="lead">Test your Tour de France knowledge against the clock!</p>
         </div>
-        <div class="startButton">
+        <div class='col-12' id="startButton">
             <button type="button" class="btn btn-lg" id="start">Start Game</button>
         </div>
     </div>
 
     <div class='row' id="background">
-        <div class='col-4'>
             <div id="clock">
                 <p id="timeRemaining"></p>
                 <svg width="160" height="160" xmlns="http://www.w3.org/2000/svg">
-                    <circle id="circle" class="circle_animation" r="69.85699" cy="81" cx="81" stroke-width="8" stroke="#6D757D"
+                    <circle id="circle" class="circle_animation" r="69.85699" cy="81" cx="81" stroke-width="8" stroke="#F22F01"
                         fill="none" />
                 </svg>
             </div>
-        </div>
-        <div class='col-8'>
+        <div class='col-12'>
             <h5 id="question"></h5>
             <form id="form"></form>
         </div>
-    </div>
-
-    <div class='row'>
         <div class="col-12" id="results">
             <div id="correct"></div>
             <div id="incorrect"></div>

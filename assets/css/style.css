@@ -1,13 +1,11 @@
 .jumbotron {
-    background-image: url('../images/tourDeFrance.jpg');
-    background-size: cover;
-    height: 100%;
-    color: white;
+    background: none;
 }
 
 .jumbotron .display-4 {
     font-family: 'Staatliches', cursive;
     font-size: 110px;
+    color: white;
     text-align: center;
     margin: auto;
     text-shadow: black 5px 0 15px;
@@ -16,28 +14,34 @@
 .jumbotron .lead {
     font-size: 20px;
     font-family: Lato;
+    color: white;
     text-shadow: black 5px 0 15px;
     text-align: center;
 }
 
-.startButton {
-    text-align: center;
-    font-family: Lato;
-}
-
-.startButton #start:hover {
-    background-color: #082EB7;
-    color: white;
-}
-
 body {
-    background-color:  #f7f7f7; 
+    /* background-color:  #f7f7f7;  */
+    background-image: url('../images/tour.jpg');
+    repeat: no-repeat;
+    background-size: cover;
+
 }
 
 #background {
-    background-color:  #f7f7f7;
-    padding: 20px;
-    margin: auto;
+    background: rgba(235, 238, 250, 0.7);
+    padding: 40px;
+    margin: 40px;
+    border: solid black 1px;
+    text-align: center;
+}
+
+#startButton {
+    text-align: center;
+}
+
+#startButton #start:hover {
+    background-color: #082EB7;
+    color: white;
 }
 
 #form button  {
@@ -49,17 +53,26 @@ body {
     background-color: #6D757D;
 }
 
+#question {
+    font-family: Lato;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
 #clock {
     position: relative;
-    float: left;
+    /* float: left; */
+    margin: auto;
 }
 
 #clock p {
     text-align:center;
     position: absolute;
     line-height: 125px;
+    font-size: 40px;
     width: 100%;
     font-family: Lato;
+    color: white;
 }
 
 svg {
