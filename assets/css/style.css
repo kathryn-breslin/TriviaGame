@@ -103,3 +103,10 @@ svg {
     background-color: #082EB7;
     color: white;
 }
+
+#correct, #incorrect {
+    font-family: 'Staatliches', cursive;
+    color: white;
+    text-align: center;
+    text-shadow: black 5px 0 15px;
+}
