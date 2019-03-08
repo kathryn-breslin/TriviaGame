@@ -8,7 +8,7 @@
     color: #F1B203;
     text-align: center;
     margin: auto;
-    text-shadow: black 5px 0 15px;
+    /* text-shadow: black 5px 0 15px; */
 }
 
 .jumbotron .lead {
@@ -41,7 +41,7 @@ body {
 }
 
 #startButton #start:hover {
-    background-color: #082EB7;
+    background-color: #F1B203;
     color: white;
 }
 
