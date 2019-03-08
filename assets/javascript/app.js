@@ -39,9 +39,11 @@ $(document).ready(function () {
     var startOver = $('#startOver');
     var start = $('#start');
     var clock = $('#clock');
+    var results = $('#results');
 
     startGame();
     background.hide();
+    results.hide();
     var time = 30;
     var initialOffset = '440';
     var i = 1;
@@ -51,7 +53,7 @@ $(document).ready(function () {
         $('#start').on('click', function() {
             background.show();
             start.hide();
-            startOver.hide();
+            results.hide();
             $('.circle_animation').css('stroke-dashoffset', initialOffset-(1*(initialOffset/time)));
             displayQuestion();
             
@@ -109,12 +111,13 @@ $(document).ready(function () {
     //Function to show Results
     function showResults() {
         if (currentQuestion === 5 || i === 30 ) {
-            $('#correct').html("Correct: " + correctAnswers);
-            $('#incorrect').html("Incorrect: " + incorrectAnswers);
+            $('#correct-score').html(correctAnswers);
+            $('#incorrect-score').html(incorrectAnswers);
             $('#question').empty();
             $('#form').empty();
             $('#clock').empty();
             startOver.show();
+            results.show();
         }
         else {
             displayQuestion();
